@@ -65,5 +65,15 @@ shared_ptr<int> p1 = new int(1024);	//错误
 shared_ptr<int> p2(new int(1024)); 	//正确，直接初始化
 ```
 
+14. 定义和改变`shared_ptr`的其他方法
+
+| 方法                                         | 备注                                                         |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| shared_ptr<T> p(q)                           | p管理内置指针q所指向的对象；q必须指向new分配的内存，且能够转换为T*类型 |
+| shared_ptr<T> p(u)                           | p从unique_ptr u那里接管了对象的所有权；将u置为空             |
+| shared_ptr<T> p(q, d)                        | p接管了内置指针q所指向的对象的所有权。q必须能转换为T*类型。p将使用可调用对象d来代替delete |
+| shared_ptr<T> p(p2, d)                       | p是shared_ptr p2的拷贝，唯一的区别是p将用可调用对象d来代替delete |
+| p.reset()<br />p.reset(q)<br />p.reset(q, d) | 若p是唯一指向其对象的shared_ptr，reset会释放此对象。若传递了可选的参数内置指针q，会令p指向q，否则会将p置空。若还传递了参数d，将会调用d而不是delete来释放q |
+
 
 
