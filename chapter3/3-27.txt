@@ -1,0 +1,6 @@
+假设txt_size是一个无参数的函数，它的返回值是int
+unsigned buf_size = 1024;
+(a) int ia[buf_size];   //错误，buf_size不是常量
+(b) int ia[4 * 7 - 14]; //正确
+(c) int ia[text_size()];    //若text_size返回值是一个常量则合法，否则不合法
+(d) char st[11] = "fundamental"; //错误，字符串长度为12
