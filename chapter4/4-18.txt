@@ -1,0 +1,6 @@
+输出vector对象元素的while循环使用前置递增运算符
+auto pbeg = v.begin();
+while(pbeg != v.end() && *pbeg >= 0){
+    cout << *pbeg++ << endl;
+}
+结果：会忽略到第一个元素，并且当所有元素都不小于0时，迭代器最后会指向一个不存在的元素，导致程序错误

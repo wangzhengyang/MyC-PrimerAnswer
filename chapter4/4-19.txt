@@ -1,0 +1,9 @@
+假设ptr的类型是指向int的指针、vec的类型是vector<int>、ival的类型是int
+(a) ptr != 0 && *ptr++
+首先判断ptr是否为0，如果不为0，判断ptr所指向的对象*ptr是否为0，若都不为0，返回true，否则返回false，并且将ptr指向下一个int对象
+
+(b) ival++ && ival
+首先判断ival的值是否为0，并将ival值加1，若非另，则判断inval+1值是否为0，若都不为0；返回true否则返回false
+
+(c) vec[ival++] <= vec[ival]
+判断vec[ival]的值是否小于等于vec[ival + 1]的值，小于返回true否则返回false
