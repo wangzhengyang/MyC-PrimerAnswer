@@ -1,0 +1,8 @@
+(a) if(fval)
+float 转换为 bool
+
+(b) dval = fval + ival;
+先ival 从 int 转换为 float 然后将 fval + ival 的float结果转换为double 
+
+(c) dval + ival * cval;
+先 cval 从 char 转换为 int 然后将 ival * cval 的int结果转换为double

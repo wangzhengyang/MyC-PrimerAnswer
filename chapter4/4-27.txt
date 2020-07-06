@@ -1,0 +1,13 @@
+unsigned long ul1 = 3, ul2 = 7;
+
+(a) ul1 & ul2
+结果 3
+
+(b) ul1 | ul2
+结果 7
+
+(c) ul1 && ul2
+结果 1
+
+(d) ul1 || ul2
+结果 1

@@ -1,0 +1,10 @@
+finalgrade = (grade > 90)? "hight pass" : (grade < 60) ? "fail" : "pass";
+
+右结合律 逻辑过程如下
+finalgrade = (grade > 90)? "high pass" : ((grade < 60)? "fail" : "pass");
+
+左结合律 逻辑过程如下
+finalgrade = ((grade > 90)? "high pass" : (grade < 60))?"fail" : "pass";
+
+grade大于90 得到high pass 小于90判断grade < 60 得到1或者0
+最后对high pass 或者 1 或者 0 判断， 如果是high pass 或者 1 则返回fail 否则返回pass

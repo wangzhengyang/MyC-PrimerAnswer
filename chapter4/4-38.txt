@@ -1,0 +1,2 @@
+double slope = static_cast<double>(j/i);
+将j/i的结果转换为double类型

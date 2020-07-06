@@ -1,0 +1,13 @@
+在适当位置添加括号，使得加上括号之后表达式的含义与原来的含义相同
+
+(a) sizeof x + y
++优先级高于sizeof 所以sizeof(x + y)
+
+(b) sizeof p->mem[i]
+->优先级高于sizeof 所以sizeof(p->mem[i])
+
+(c) sizeof a < b
+<优先级低于sizeof 所以(sizeof a) < b
+
+(d) sizeof f()
+f()优先级高于sizeof 所以sizeof(f())

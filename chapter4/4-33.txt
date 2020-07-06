@@ -1,0 +1,4 @@
+someValue ? ++x, ++y : --x, --y
+
+若somValue值大于0， 则x，y递增
+若somValue值等于0， 则x，y递减

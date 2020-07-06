@@ -1,0 +1,1 @@
+使用unsigned int作为quiz1，则置位高位时，由于unsigned int 长度限制，会导致数据丢失
