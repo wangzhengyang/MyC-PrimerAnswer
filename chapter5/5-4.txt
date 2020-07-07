@@ -1,0 +1,11 @@
+(a) while(string::iterator iter != s.end()){/*...*/}
+迭代器初始时是空的迭代器，所以刚开始时 iter 与 s.end()是相等的
+string::iterator iter = s.begin();
+while(iter != s.end()){/*...*/}
+
+(b) while(bool status = find(word)){/*...*/}
+    if(!status){/*...*/}
+status 是while循环内的局部变量，所以在if(!status)中是无法使用的
+bool status = false;
+while(status = find(word)){/*....*/}
+if(!status){/*...*/}

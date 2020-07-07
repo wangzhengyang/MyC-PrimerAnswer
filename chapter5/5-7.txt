@@ -1,0 +1,19 @@
+改正错误
+
+(a) if (ival1 != ival2)
+        ival1 = ival2       //没有加；号
+    else
+        ival1 = ival2 = 0;
+
+
+(b) if (ival < minval)      //没有加{}号
+        minval = ival;
+        occurs = 1;
+
+(c) if (int ival = get_value()) //ival变量无法在外部使用
+        cout << "ival = " << ival << endl;
+    if (!ival)
+        cout << "ival = 0\n";
+
+(d) if (ival = 0)           //应该使用==
+        ival = get_value();
