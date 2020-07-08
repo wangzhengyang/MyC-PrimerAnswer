@@ -1,0 +1,23 @@
+//while
+while(cin >> temp){
+
+}
+
+//for
+for(auto iter = ivec.begin(); iter != ivec.end(); ++iter){
+
+} 
+
+
+//for -> while
+auto iter = ivec.begin();
+while( iter != ivec.end()){
+    ++iter;
+}
+
+//while -> for
+for( cin >> temp; cin; cin >> temp){
+
+}
+
+优先使用for循环，因为for循环也有while循环的判定条件，以及其他的一些步骤

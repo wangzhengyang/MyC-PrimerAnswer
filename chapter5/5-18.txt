@@ -1,0 +1,30 @@
+(a) do 
+        int v1, v2;
+        cout << "Please enter two numbers to sum:";
+        if(cin >> v1 >> v2)
+            cout << "Sum is: " << v1 + v2 << endl;
+    while(cin);
+
+do...while没有使用{}
+修改：
+do{
+    /*....*/
+}while(cin);
+
+(b) do{
+    //...
+    }while(int ival = get_response());
+不能在while条件中放入变量声明
+修改：
+    do{
+    //...
+    }while(ival = get_response());
+
+(c) do{
+    int ival = get_response();
+    }while(ival);
+不能在while条件内部使用块内的局部变量
+int iva;
+do{
+    ival = get_response();
+}while(ival);

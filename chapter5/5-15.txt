@@ -1,0 +1,19 @@
+说明含义并改正错误
+(a) for(int ix = 0; ix != sz; ++ix){/*...*/}
+    if(ix != sz)
+        //....
+遍历从0到sz
+错误点:ix不能在for循环外部使用
+    int ix = 0;
+    for(; ix != sz; ++ix){/*...*/}
+    if(ix != sz)
+        //...
+
+(b) int ix;
+    for(ix != sz; ++ix){/*...*/}
+遍历从0到sz
+错误点:ix没有初始化
+    int ix = 0;
+
+(c) for(int ix = 0; ix != sz; ++ix, ++sz){/*...*/}
+死循环 ix与sz同时递增，会导致ix != sz条件始终满足

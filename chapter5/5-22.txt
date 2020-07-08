@@ -1,0 +1,13 @@
+将goto语句改写成循环语句
+
+begin:
+    int sz = get_size();
+    if (sz <= 0){
+        goto begin;
+    }
+
+改写如下：
+    int sz = get_size();
+    while(sz <= 0){
+        sz = get_size();
+    }
