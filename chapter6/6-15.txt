@@ -1,0 +1,12 @@
+string::size_type find_char(const string &s,
+                            char c,
+                            string::size_type &occurs);
+s 常量引用，获取字符串，不能对字符串进行改变
+c 字符副本，这样不会修改原有实参值
+occurs 引用，通过引用将结果传递出函数
+
+s 是引用，是为了减少实参数据传递时的消耗
+occurs 是引用，是将参数传递出函数
+
+如果s是普通引用，则可以对s的内部数据进行更改
+如果occurs是常量引用，则无法对occurs的值进行更改

@@ -1,0 +1,7 @@
+为函数编写函数声明
+
+(a) bool compare(matrix &m1, matrix &m2);
+比较两个矩阵是否相等,相等返回true，否则返回false
+
+(b) vector<int>::iterator change_val(int val, vector<int>::iterator)
+修改该迭代器位置的值，并返回该迭代器

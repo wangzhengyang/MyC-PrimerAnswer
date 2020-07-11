@@ -1,0 +1,16 @@
+错误指出并改正
+
+void print(const int ia[10])
+{
+    for(size_t i = 0； i != 10; ++i){
+        cout << ia[i] << endl;
+    }
+}
+
+传入参数时并不知道数组的长度，所以需要指定
+void print(const int ia[], int sz)
+{
+    for(size_t i = 0; i != sz; ++i){
+        cout << ia[i] << endl;
+    }
+}

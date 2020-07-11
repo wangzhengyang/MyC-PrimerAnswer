@@ -1,0 +1,24 @@
+(a) int f(){
+    string s;
+    //...
+    return s;
+    }
+返回类型是int，return的类型是string
+修改：string f(){
+    string s;
+    //...
+    return s;
+}
+
+(b) f2(int i){/*...*/}
+函数没有返回类型
+修改：int f2(int i){/*...*/}
+
+(c) int calc(int v1, int v1) {/*....*/}
+函数行参名相同
+修改：int calc(int v1, int v2){/*...*/}
+
+(d) double square(double x) return x * x;
+函数没有函数体
+修改：double square(double x){return x * x;}
+

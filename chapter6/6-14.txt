@@ -1,0 +1,5 @@
+//行参是引用类型
+void reset(int &val); //复位
+
+//行参不能是引用类型
+void printgrade(int grade); //不能更改成绩

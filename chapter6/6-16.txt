@@ -1,0 +1,5 @@
+bool is_empty(string &s){return s.empty();}
+s是引用，所以可以修改s内部数据
+
+修改如下：
+bool is_empty(const string &s){return s.empty();}
