@@ -1,0 +1,9 @@
+char *init(int ht, int wd =80, char bckgrnd = ' ');
+(a) init();
+错误， ht没有给定值
+
+(b) init(24, 10);
+正确
+
+(c) init(14, '*');
+错误， wd参数不匹配

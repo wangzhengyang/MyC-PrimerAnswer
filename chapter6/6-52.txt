@@ -1,0 +1,10 @@
+void manip(int, int);
+double dobj;
+
+(a) manip('a', 'z');
+‘a’ char -> int
+'z' char -> int
+
+(b) manip(55.4, dobj);
+'55.4' double -> int
+'dobj' double -> int

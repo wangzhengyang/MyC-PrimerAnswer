@@ -1,0 +1,5 @@
+(a) int ff(int a, int b = 0, int c = 0);
+正确
+
+(b) char *init(int ht = 24, int wd, char bckgrnd);
+错误， ht给定默认的形参值，则wd、bckgrnd也需要给定默认值

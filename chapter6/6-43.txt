@@ -1,0 +1,5 @@
+(a) inline bool eq(const BigInt&, const BigInt&) {}
+放在头文件中，因为是内联函数
+
+(b) void putValues(int *arr, int size);
+声明放在头文件中，定义放在源文件中

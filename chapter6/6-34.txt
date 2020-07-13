@@ -1,0 +1,12 @@
+int factorial(int val)
+{
+    if (val > 1){
+        return factorial(val - 1) * val;
+    }
+    return 1;
+}
+
+如果停止条件改为
+if (val != 0) 
+
+如果val是负数的话，递归依旧可以继续执行

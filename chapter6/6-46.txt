@@ -1,0 +1,3 @@
+//isShorter无法改写成constexpr函数，
+bool isShorter(const string &s1, const string &s2)
+因为s1和s2必须返回值是常量，才能声明为constexpr函数

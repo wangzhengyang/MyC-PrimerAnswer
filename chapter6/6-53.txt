@@ -1,0 +1,11 @@
+(a) int calc(int&, int&);
+    int calc(const int&, const int&);
+第二个语句只能处理const int类型
+
+(b) int calc(char*, char*);
+    int calc(const char*, const char*);
+第二个语句只能处理const char*
+
+(c) int calc(char*, char*);
+    int calc(char* const, char* const);
+不合法

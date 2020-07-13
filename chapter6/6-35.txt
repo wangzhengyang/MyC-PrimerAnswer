@@ -1,0 +1,10 @@
+int factorial(int val)
+{
+    if (val > 1){
+        return factorial(val - 1) * val;
+    }
+    return 1;
+}
+
+为什么传入的值是val - 1 而非 val--;
+因为val--实际传入的参数值是val

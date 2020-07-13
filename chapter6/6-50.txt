@@ -1,0 +1,16 @@
+void f();
+void f(int);
+void f(int, int);
+void f(double, double = 3.14);
+
+(a) f(2.56, 42)
+不合法，具有二义性
+
+(b) f(42)
+使用void f(int);
+
+(c) f(42, 0)
+使用void f(int, int);
+
+(d) f(2.56, 3.14)
+使用 void f(double, double = 3.14);
