@@ -1,0 +1,2 @@
+如果move、set和display函数的返回类型不是Screen&而是Screen,在set、display函数中
+不会对myScreen内部数据更改

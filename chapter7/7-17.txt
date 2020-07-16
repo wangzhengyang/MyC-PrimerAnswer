@@ -1,0 +1,2 @@
+class 默认成员是private
+struct 默认成员是public

@@ -1,0 +1,7 @@
+vector将其单参数的构造函数定义成explicit的，
+因为这样需要保证传入的参数是需要的类型，而不是通过隐性转化来的类型
+vector接受的单参数是int类型，这个参数的原意是指定vector的容量，如果在本来需要vector的地方
+提供一个int值并且希望这个int值自动转换为vector，则这个过程比较牵强
+
+string
+需要从const char*转换为string，因为容易将字符串数组看作string对象

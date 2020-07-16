@@ -1,0 +1,14 @@
+string null_isbn("9-999-99999-9");
+
+Sales_data item1(null_isbn);
+null_isbn 调用 Sales_data(const string &s) 构造对象Sales_data
+然后Sales_data对象 通过默认拷贝构造函数 Sales_data(const Sales_data &d) 
+来生成对象item1
+
+Sales_data item2("9-999-99999-9");
+"9-999-99999-9"通过 String(char*) 生成 string对象
+string 对象通过 Sales_data(const string &s) 构造对象Sales_data
+然后Sales_data对象 通过默认拷贝构造函数 Sales_data(cosnt Sales_data &d)
+来生存对象iterm2
+
+如果Sales_data的构造函数都是explicit，则编译不通过，因为不支持隐性转换

@@ -1,0 +1,3 @@
+Screen能安全依赖于拷贝和赋值操作的默认版本，
+因为height, width, cursor 都是std::string::size_type类型，
+string类型通过内置的operator=来实现拷贝和赋值

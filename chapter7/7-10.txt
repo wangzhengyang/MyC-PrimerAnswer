@@ -1,0 +1,6 @@
+if (read(read(cin, data1), data2))
+
+read(cin, data1)
+首先将cin读入的数据赋值给data1，同时返回std::istream的引用
+read(cin, data2)
+返回的std::istream的引用，继续作用与read，然后读入数据赋值给data2

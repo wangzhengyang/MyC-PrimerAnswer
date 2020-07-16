@@ -1,0 +1,2 @@
+
+将Screen类的pos的typedef放在类的最后一行，则无法使用pos变量

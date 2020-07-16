@@ -1,0 +1,2 @@
+
+将Person(string name, string address) 定义为explicit 

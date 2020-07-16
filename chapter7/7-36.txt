@@ -1,0 +1,8 @@
+struct X{
+    X(int i, int j) : base(i), rem(base % j){} 
+    int rem, base;
+};
+
+不能通过内部变量初始化内部变量，因为不知道内部变量的初始化顺序
+修改如下：
+X(int i, int j) : base(i), rem(i % j){}

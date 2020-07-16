@@ -1,0 +1,3 @@
+接受一个string参数的Sales_data构造函数是否应该是explicit
+
+应该，这样可以防止string类型调用构造函数隐性转换为Sales_data类

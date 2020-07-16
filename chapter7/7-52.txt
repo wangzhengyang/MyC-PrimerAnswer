@@ -1,0 +1,5 @@
+Sales_data item = {"978-0590353403", 25, 15.99};
+
+"978-0590353403" 初始化 bookNo
+25 初始化 units_sold
+15.99 初始化 revence

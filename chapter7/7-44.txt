@@ -1,0 +1,2 @@
+vector<NoDefault> vec(10);
+不合法， 因为NoDefault没有提供默认的构造函数，只能通过NoDefault(int)进行初始化

@@ -1,0 +1,13 @@
+i.combine(s) s是string 对象
+
+(a) Sales_data &combine(Sales_data);
+string 通过 Sales_data(const string &s) 转换为Sales_data对象
+然后Sales_data对象通过拷贝构造函数构造副本传入combine函数
+
+(b) Sales_data &combine(Sales_data&);
+string 通过 Sales_data(const string &s) 转换为Sales_data对象
+然后Salse_data对象通过引用传入combine函数
+
+(c) Sales_data &combine(const Sales_data&) const;
+string 通过 Sales_data(const string &s) 转换为Sales_data对象
+然后Sales_data通过常量引用传入combine函数

@@ -1,0 +1,18 @@
+//example.h
+
+class Example{
+public:
+    static double rate = 6.5;
+    static const int vecSize = 20;
+    static vector<double> vec(vecSize);
+};
+
+//example.c
+double Example::rate;
+vector<double> Example::vec;
+
+错误
+rate vec 只能在类外进行初始化定义
+修改如下：
+double Example::rate = 6.5;
+vector<double> Example::vec(vecSize);
