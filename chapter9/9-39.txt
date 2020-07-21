@@ -1,0 +1,10 @@
+vector<string> svec;
+svec.reserve(1024);
+string word;
+while (cin >> word)
+    svec.push_back(word);
+svec.resize(svec.size() + sevc.size()/2);
+
+初始化1024个元素
+存入数据
+调节容器大小 为 3/2个当前容器元素个数的大小

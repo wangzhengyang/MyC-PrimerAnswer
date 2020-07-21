@@ -1,0 +1,9 @@
+if(!c.empty()){
+    auto val = *c.begin(), val2 = c.front();
+    auto last = c.end();
+    auto val3 = *(--last);
+    auto val4 = c.back();
+}
+
+若c.size()为1，则val、val2、val3和val4的值是多少
+都是返回c的第一个元素值

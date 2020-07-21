@@ -1,0 +1,5 @@
+读取string的list中的元素
+list<string>::const_iterator
+
+写入list
+list<string>::iterator

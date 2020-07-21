@@ -1,0 +1,2 @@
+vector的capacity 指的是vector最大可存储的元素个数
+vector的size     指的是vector当前容纳的元素个数

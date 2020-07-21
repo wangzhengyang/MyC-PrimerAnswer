@@ -1,0 +1,37 @@
+vector<int> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+auto iter = vi.begin();
+while(iter != vi.end()){
+    if (*iter % 2){
+        iter = vi.insert(iter, *iter);
+        iter += 2;
+    }else{
+        iter = vi.erase(iter);
+    }
+}
+删除偶数值元素并复制奇数值元素的程序不能用于list或forward_list
+
+list无法通过+运算符获取后面迭代器，只能通过++运算符来获取
+list<int> lst = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+auto iter = vi.begin();
+while(iter != vi.end()){
+    if(*iter % 2){
+        iter = vi.isert(iter, *iter);
+        iter++;iter++;
+    }else{
+        iter = vi.erase(iter);
+    }
+}
+
+forward_list没有insert以及erase操作
+forward_list<int> flst = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+auto prev = flst.before_begin();
+auto curr = flst.begin();
+while(iter != flst.end()){
+    if(*iter % 2){
+        prev = flst.insert_after(prev, *iter);
+        curr = prev++;
+    }else{
+        curr = flst.erase_after(prev, *iter);
+    }
+}
+

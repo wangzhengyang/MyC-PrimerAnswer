@@ -1,0 +1,4 @@
+读入256个词， capacity是1024
+读入512个词， capacity是1024
+读入1000个词， capacity是1024
+读入1048个词， capacity是2048

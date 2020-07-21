@@ -1,0 +1,10 @@
+如果我们将第308页中使用insert返回值将元素添加到list中的循环程序改写成将元素插入到vector中，
+分析循环将如何工作
+
+list<string> lst;
+auto iter = lst.begin();
+while(cin >> word){
+    iter = lst.insert(iter, word);
+}
+
+循环一样，过程也一样

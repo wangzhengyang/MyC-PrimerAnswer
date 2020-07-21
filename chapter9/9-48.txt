@@ -1,0 +1,5 @@
+假定name和numbers的定义如下所示，nubmers.find(name)返回什么？
+string name("AnnaBelle");
+string numbers("0123456789");
+
+numbers.find(name) 返回 string::npos 没有找到
