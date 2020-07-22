@@ -1,0 +1,1 @@
+使用back_inserter实际上是调用push_back函数，已经不是使用标准库函数了

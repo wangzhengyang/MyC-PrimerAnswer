@@ -1,0 +1,3 @@
+back_inserter 创建一个使用push_back的迭代器
+front_inserter 创建一个使用push_front的迭代器
+inserter创建一个使用insert的迭代器

@@ -1,0 +1,27 @@
+(a) vector<int> vec; list<int> lst; int i;
+    while(cin >> i)
+        lst.push_back(i);
+    copy(lst.cbegin(), lst.cend(), vec.begin());
+
+vec 是空的容器，copy函数中vec的元素个数大小至少要大于list元素个数
+
+修改
+list<int> lst; int i;
+while(cin >> i)
+    lst.push_back(i);
+vector<int> vec(lst.size(), 0);
+copy(lst.cbegin(), lst.cend(), vec.begin());
+
+(b) vector<int> vec;
+vec.reserve(10);
+fill_n(vec.begin(), 10, 0)
+
+只是扩展了vec容量的大小，但是实际vec元素个数为空
+修改
+vector<int> vec(10, 0);
+fill_n(vec.begin(), 10, 0);
+
+或者使用back_inserter
+vector<int> vec;
+vec.reserve(10);
+fill_n(back_inserter(vec), 10, 0);
