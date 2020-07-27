@@ -1,0 +1,3 @@
+map的关键字有两个，vector只有一个
+其次元素可以在使用时，map主动生成;而vector需要通过push_back添加
+map查找元素通过键值来查找,vector需要通过遍历的方式来查找
