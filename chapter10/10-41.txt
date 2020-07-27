@@ -1,0 +1,11 @@
+replace(beg, end, old_val, new_val);
+将[beg, end)范围内的元素如果值等于old_val，则替换成new_val
+
+replace_if(beg, end, pred, new_val);
+将[beg, end)范围内的元素如果满足pred条件，则替换成new_val
+
+replace_copy(beg, end, dest, old_val, new_val);
+将[beg, end)范围内的元素copy到dest中，如果值等于old_val，则copy的值为new_val
+
+replace_copy_if(beg, end, dest, pred, new_val);
+将[beg, end)范围内的元素copy到dest中，如果值满足pred条件，则copy的值为new_val

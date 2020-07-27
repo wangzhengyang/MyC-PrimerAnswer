@@ -1,0 +1,3 @@
+copy使用前向迭代器
+reverse使用双向迭代器
+unique使用前向迭代器
