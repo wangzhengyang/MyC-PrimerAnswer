@@ -1,0 +1,13 @@
+c是一个string的multiset，v是一个string的vector
+
+copy(v.begin(), v.end(), inserter(c, c.end()));
+非法,因为对multiset的const string无法赋值
+
+copy(v.begin(), v.end(), back_inserter(c));
+非法，因为对multiset的const string无法赋值
+
+copy(c.begin(), c.end(), inserter(v, v.end()))
+可以
+
+copy(c.begin(), c.end(), back_inserter(v));
+可以

@@ -7,10 +7,7 @@ using namespace std;
 
 int main()
 {
-    //不行，无法定义
-    /*
-    map<list<int>::iterator, int> > lstimap;
-    map<vector<int>::iterator, int> > iterimap;
-    */
+    map<list<int>::iterator, int> lstimap; //不可以，lstimap不支持<操作
+    map<vector<int>::iterator, int> iterimap; //可以
     return 0;
 }

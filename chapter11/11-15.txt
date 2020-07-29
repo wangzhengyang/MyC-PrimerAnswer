@@ -1,0 +1,5 @@
+map<int, vector<int>>
+
+mapped_type 是 vector<int>
+key_type 是 int
+value_type 是 pair<const int, vector<int>>
