@@ -1,0 +1,3 @@
+map<string, vector<int>> simap;
+
+vector<int>::iterator iter = simap.find("hello");

@@ -1,0 +1,4 @@
+map<string, int>
+
+下标操作类型string
+下标运算符返回类型int

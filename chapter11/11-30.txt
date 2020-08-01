@@ -1,0 +1,7 @@
+pos.first->second
+
+equal_range返回的类型 
+pair<pair<int, string>::iterator, pair<int, string>::iterator>
+
+pos.first 指向 pair<int, string>::iterator
+pos.first->second 指向 string
