@@ -1,0 +1,1 @@
+因为vector<string>的size()是一个大于等于0的数

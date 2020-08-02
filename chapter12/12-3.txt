@@ -1,0 +1,2 @@
+不需要， 因为push_back以及pop_back并不是对shared_ptr做处理，而是对
+vector<string>元素做处理，没有可能影响到shared_ptr，所以不需要
