@@ -1,0 +1,5 @@
+trans_map[key] = value.substr(1);
+会覆盖之前的规则，使用最后一次赋值的规则来使用
+
+trans_map.insert({key, value.substr(1)})
+如果有相同的规则插入，则显示插入失败，所以使用第一次的规则来使用

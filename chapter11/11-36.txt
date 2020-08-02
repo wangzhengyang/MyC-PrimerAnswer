@@ -1,0 +1,2 @@
+原程序会检测value.size() > 1
+如果不满足该条件，则会抛出一个runtime_error的异常
