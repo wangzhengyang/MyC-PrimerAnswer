@@ -1,0 +1,3 @@
+process(shared_ptr<int>(p.get()));
+
+在函数结束后，会释放p所指向的对象

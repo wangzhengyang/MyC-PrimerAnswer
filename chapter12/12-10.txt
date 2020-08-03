@@ -1,0 +1,5 @@
+shared_ptr<int> p(new int(42));
+process(shared_ptr<int>(p));
+
+正确，shared_ptr<int>(p)将引用计数置为2,在函数调用完成后引用计数
+减为1

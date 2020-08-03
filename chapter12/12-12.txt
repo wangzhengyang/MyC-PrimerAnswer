@@ -1,0 +1,14 @@
+auto p = new int();
+auto sp = make_shared<int>();
+
+(a) process(sp);
+合法
+
+(b) process(new int());
+合法
+
+(c) process(p);
+不合法，会被释放掉
+
+(d) process(shared_ptr<int>(p));
+合法

@@ -1,0 +1,5 @@
+auto sp = make_shared<int>();
+auto p = sp.get();
+delete p;
+
+sp的引用计数为1,但是其指向的对象已经释放掉了
