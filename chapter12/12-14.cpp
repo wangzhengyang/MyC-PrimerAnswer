@@ -6,15 +6,15 @@ using namespace std;
 struct destination{};
 struct connection{};
 
-connection connect(destination *d)
+connection connect(destination *p)
 {
-    cout << "connected!" << endl;
+    cout << "connect..." << endl;
     return connection();
 }
 
-void disconnect(connection c)
+void disconnect(connection *c)
 {
-    cout << "disconnected!" << endl;
+    cout << "disconnect..." << endl;
 }
 
 void f(destination &d)
@@ -22,15 +22,10 @@ void f(destination &d)
     connection c = connect(&d);
 }
 
-void end_connection(connection *p)
-{
-    disconnect(*p);
-}
-
 void f1(destination &d)
 {
     connection c = connect(&d);
-    shared_ptr<connection> p(&c,end_connection);
+    shared_ptr<connection> p(&c, disconnect);
 }
 
 int main()

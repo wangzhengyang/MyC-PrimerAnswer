@@ -2,13 +2,13 @@ auto p = new int();
 auto sp = make_shared<int>();
 
 (a) process(sp);
-合法
+合法,且不会释放资源
 
 (b) process(new int());
-合法
+合法,但在函数结束时释放new int()所指向的对象
 
 (c) process(p);
-不合法，会被释放掉
+不合法，p无法隐性转换成shared_ptr<int>
 
 (d) process(shared_ptr<int>(p));
-合法
+合法,但是p所指向的资源在函数结束时被释放掉

@@ -1,0 +1,2 @@
+std::string& deref() const{return (*check(curr, "dereference past end"))[curr];}
+这个版本不好，因为check函数可能会抛出异常

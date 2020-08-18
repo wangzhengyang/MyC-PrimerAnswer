@@ -6,34 +6,23 @@ using namespace std;
 struct destination{};
 struct connection{};
 
-connection connect(destination *d)
+connection connect(destination *p)
 {
-    cout << "connected!" << endl;
+    cout << "connect..." << endl;
     return connection();
-}
-
-void disconnect(connection c)
-{
-    cout << "disconnected!" << endl;
-}
-
-void f(destination &d)
-{
-    connection c = connect(&d);
 }
 
 void f1(destination &d)
 {
     connection c = connect(&d);
-    shared_ptr<connection> p(&c, [](connection *d){
-        disconnect(*d);
+    shared_ptr<connection> p(&c, [](connection *p){
+        cout << "disconnect..." << endl;
     });
 }
 
 int main()
 {
     destination d;
-    f(d);
     f1(d);
     return 0;
 }
