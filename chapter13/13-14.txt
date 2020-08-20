@@ -1,0 +1,6 @@
+void f(numbered s) { cout << s.mysn << endl;}
+
+numbered a, b = a, c = b;
+f(a); f(b); f(c);
+
+值是相同的

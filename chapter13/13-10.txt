@@ -1,0 +1,4 @@
+当一个StrBlob对象销毁时 首先调用shared_ptr的析构函数，若引用计数为0，调用vector的
+析构函数，内部调用string的析构函数
+
+当一个StrBlobPtr对象销毁时，调用weak_ptr的析构函数

@@ -1,0 +1,7 @@
+bool fcn(const Sales_data *trans, Sales_data accum)
+{
+    Sales_data item1(*trans), item2(accum);
+    return item1.isbn() != iterm2.isbn();
+}
+
+发生三次析构函数， item1, item2, accum

@@ -1,0 +1,2 @@
+StrBlob 赋值给另一个StrBlob 会调用shared_ptr的拷贝赋值运算
+StrlBlobPtr 赋值给另一个StrBlobPtr 会调用weak_ptr的拷贝赋值元素，值类型直接赋值

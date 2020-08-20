@@ -1,0 +1,10 @@
+假定Point是一个类类型，它有一个public的拷贝构造函数
+
+Point global;
+Point foo_bar(Point arg) //实参转形参使用拷贝构造
+{
+    Point local = arg, *heap = new Point(global); //拷贝构造
+    *heap = local; //赋值
+    Point pa[4] = {local, *heap}; //拷贝构造
+    return *heap; //拷贝构造
+}
