@@ -17,15 +17,17 @@ private:
 
 HasPtr::HasPtr(const HasPtr &p)
 {
-    ps = new string(*(p.ps));
-    delete p.ps;
+    auto temp = new string(*(p.ps));
+    delete ps;
+    ps = temp;
     i = p.i;
 }
 
 HasPtr &HasPtr::operator=(const HasPtr &p)
 {
-    this->ps = new string(*(p.ps));
-    delete p.ps;
-    this->i = p.i;
+    auto temp = new string(*(p.ps));
+    delete ps;
+    ps = temp;
+    i = p.i;
     return (*this);
 }

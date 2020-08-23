@@ -1,0 +1,24 @@
+class TextQuery{
+public:
+private:
+    shared_ptr<vector<string>> ptext;
+    map<string, shared_ptr<set<int>>> pmap;
+}
+
+class QueryResult{
+public:
+private:
+    string name;
+    shared_ptr<vector<string>> ptext;
+    shared_ptr<set<int>> pset;
+}
+
+TextQuery在拷贝时，ptext调用shared_ptr的拷贝构造函数 pmap调用map的拷贝构造函数，内部调用
+string的拷贝构造以及shared_ptr的拷贝构造
+在赋值的时候，过程同上
+在销毁时，ptext调用shared_ptr的析构函数，如果引用计数变为0，则释放vector<string>的内存空间 pmap
+调用map的析构函数，在内部 调用string的析构函数， 调用shared_ptr的析构函数，如果引用计数变为0，则释放
+set<int>的内存空间
+
+QueryResult过程跟上面大体相似
+
