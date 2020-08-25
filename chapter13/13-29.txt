@@ -1,0 +1,2 @@
+swap(HasPtr&, HasPtr&)
+中调用使用的是std::swap,所以不会导致递归循环

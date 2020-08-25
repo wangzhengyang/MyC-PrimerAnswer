@@ -5,9 +5,11 @@ using namespace std;
 
 class TreeNode{
 public:
-    TreeNode():value(string()), count(0), left(new TreeNode()), right(new TreeNode()){}
+    TreeNode():value(string()), count(1), left(nullptr), right(nullptr){}
     TreeNode(const TreeNode&);
-    TreeNode &operator=(const TreeNode&);
+    ~TreeNode();
+    void CopyTree();
+    int ReleaseTree();
 private:
     string value;
     int count;
@@ -15,41 +17,69 @@ private:
     TreeNode *right;
 };
 
-TreeNode::TreeNode(const TreeNode& n)
+TreeNode::TreeNode(const TreeNode& n):value(n.value), count(1), left(n.left), right(n.right)
 {
-    value = n.value;
-    count = n.count;
-    left = n.left;
-    right = n.right;
+    if(left){
+        left->CopyTree();
+    }
+    if(right){
+        right->CopyTree();
+    }
 }
 
-TreeNode &TreeNode::operator=(const TreeNode &n)
+void TreeNode::CopyTree()
 {
-    value = n.value;
-    count = n.count;
-    left = n.left;
-    right = n.right;
-    return (*this);
+    if(left){
+        left->CopyTree();
+    }
+    if(right){
+        left->CopyTree();
+    }
+    count++;
+}
+
+int TreeNode::ReleaseTree()
+{
+    if(left){
+        if(!left->ReleaseTree()){
+            delete left;
+        }
+    }
+    if(right){
+        if(!right->ReleaseTree()){
+            delete right;
+        }
+    }
+    count--;
+    return count;
+}
+
+TreeNode::~TreeNode()
+{
+    if(count){
+        ReleaseTree();
+    }
 }
 
 class BinStrTree{
 public:
-    BinStrTree():root(new TreeNode()){}
+    BinStrTree():root(nullptr){}
     BinStrTree(const BinStrTree&);
-    BinStrTree &operator=(const BinStrTree&);
+    ~BinStrTree();
 private:
+
     TreeNode *root;
 };
 
-BinStrTree::BinStrTree(const BinStrTree &n)
+BinStrTree::BinStrTree(const BinStrTree &n):root(n.root)
 {
-    root = n.root;
+    root->CopyTree();
 }
 
-BinStrTree &BinStrTree::operator=(const BinStrTree &n)
+BinStrTree::~BinStrTree()
 {
-    root = n.root;
-    return (*this);
+    if(!root->ReleaseTree()){
+        delete root;
+    }
 }
-
 

@@ -3,11 +3,6 @@
 
 using namespace std;
 
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 class HasPtr
 {
 public:
@@ -23,7 +18,6 @@ private:
 HasPtr::HasPtr(const HasPtr &p)
 {
     auto temp = new string(*p.ps);
-    delete ps;
     ps = temp;
     i = p.i;
 }
