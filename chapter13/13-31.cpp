@@ -14,21 +14,31 @@ public:
     HasPtr &operator=(HasPtr rhs);
     ~HasPtr() { if (ps) delete ps; }
     void print();
+    bool operator<(const HasPtr&);
 private:
     string *ps;
 
 };
 
+bool HasPtr::operator<(const HasPtr &n)
+{
+    cout << "operator<:" << *ps << " and " << *n.ps << endl;
+    if(*ps < *n.ps){
+        return true;
+    }
+    return false;
+}
+
 HasPtr::HasPtr(const HasPtr &n)
 {
-    cout << "copy construct" << endl;
+    //cout << "copy construct" << endl;
     auto temp = new string(*n.ps);
     ps = temp;
 }
 
 HasPtr &HasPtr::operator=(HasPtr rhs)
 {
-    cout << "operator=" << endl;
+    //cout << "operator=" << endl;
     swap(*this, rhs);
     return (*this);
 }
@@ -47,20 +57,12 @@ void HasPtr::print()
 
 int main()
 {
-    HasPtr p1("wang");
-    HasPtr p2("zhengyang");
-    HasPtr p3("shit");
-    p1.print();
-    p2.print();
-    swap(p1, p2);
-    p1.print();
-    p2.print();
-
-    cout << endl;
-    p1.print();
-    p3.print();
-    p3 = p1;
-    p1.print();
-    p3.print();
+    vector<HasPtr> hvec;
+    hvec.push_back(HasPtr("wang"));
+    hvec.push_back(HasPtr("zheng"));
+    hvec.push_back(HasPtr("yang"));
+    hvec.push_back(HasPtr("liu"));
+    hvec.push_back(HasPtr("qin"));
+    sort(hvec.begin(), hvec.end());
     return 0;
 }
