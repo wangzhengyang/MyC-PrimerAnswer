@@ -91,7 +91,7 @@ QueryResult &QueryResult::operator=(const QueryResult &t)
     for(auto i = t.pset->cbegin(); i != t.pset->cend(); ++i){
         pset->insert(*i);
     }
-    return (*this);   
+    return (*this);
 }
 
 int main()

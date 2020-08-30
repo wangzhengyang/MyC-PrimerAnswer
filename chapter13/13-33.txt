@@ -1,0 +1,4 @@
+Message的成员save和remove的参数是一个Folders&，为什么不是Folder或是const Message的成员save和remove的参数是一个Folders
+
+不用Folder因为我们要修改真实的Folder对象，而不是一个拷贝副本
+不用const Floders& 是因为我们要修改Folders对象内部的内容
