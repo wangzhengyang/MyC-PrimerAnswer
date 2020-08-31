@@ -1,0 +1,4 @@
+int ix = 1024, *pi = &ix, *pi2 = new int(2408);
+typedef unique_ptr<int> IntP;
+
+(a) Int p0(ix); 
