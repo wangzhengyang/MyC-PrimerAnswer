@@ -1,6 +1,10 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <map>
+#include <set>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -14,7 +18,7 @@ public:
     ~StrVec();
     size_t size() const { return first_free - start; }
     size_t capacity() const { return end - start; }
-    void print();
+    string &print(size_t index);
 private:
     void chk_n_alloc()
     {
@@ -31,11 +35,9 @@ private:
     string *end;
 };
 
-void StrVec::print()
+string &StrVec::print(size_t index)
 {
-    for(auto i = start; i != first_free; ++i){
-        cout << *i << endl;
-    }
+    return *(start + index);
 }
 
 StrVec::StrVec(const StrVec &svec)
@@ -106,24 +108,99 @@ void StrVec::push_back(const string &s)
     alloc.construct(first_free++, s);
 }
 
+class QueryResult;
+
+class TextQuery
+{
+public:
+    TextQuery():p(nullptr){}
+    ~TextQuery(){}
+    QueryResult query(const string&);
+    void read(ifstream &infile);
+private:
+    shared_ptr<StrVec> p;
+    map<string, shared_ptr<set<int>>> mp;
+};
+
+void TextQuery::read(ifstream &infile)
+{
+    string line, word;
+    size_t linenumber = 0;
+    while(getline(infile, line)){
+        
+        if(p == nullptr){
+            p = make_shared<StrVec>();
+        }
+        
+        linenumber++;
+        p->push_back(line);
+        istringstream is(line);
+        while(is >> word){
+            if(mp[word] == nullptr){
+                mp[word] = make_shared<set<int>>();
+            }
+            mp[word]->insert(linenumber);
+        }
+    }
+    
+}
+
+class QueryResult{
+public:
+    QueryResult(const string &s,shared_ptr<StrVec> psvec = nullptr, shared_ptr<set<int>> pst = nullptr):content(s), p(psvec), st(pst){}
+    QueryResult &operator=(const QueryResult &);
+    ~QueryResult(){}
+    void print();
+private:
+    string content;
+    shared_ptr<StrVec> p;
+    shared_ptr<set<int>> st;
+};
+
+QueryResult TextQuery::query(const string &s)
+{
+    auto iter = mp.find(s);
+    if(iter == mp.end()){
+        return QueryResult(s, make_shared<StrVec>(), shared_ptr<set<int>>());
+    }
+    return QueryResult(s, p, mp[s]);
+    
+}
+
+QueryResult &QueryResult::operator=(const QueryResult &res)
+{
+    content = res.content;
+    p = res.p;
+    st = res.st;
+    return (*this);
+}
+
+void QueryResult::print()
+{
+    
+    if(st){
+        cout << content << " occures " << st->size() << " times" << endl;
+        for(auto i = st->cbegin(); i != st->cend(); ++i){
+            cout << "line:" << *i;
+            cout << p->print(*i - 1) << endl;
+        }
+    }
+    
+}
+
+
+
 int main()
 {
-    StrVec str;
-    str.push_back("wangzhengyang");
-    str.push_back("liuqin");
-    str.push_back("love");
-    str.print();
-
-    StrVec str1(str);
-    str1.push_back("shit");
-    str.print();
-    str1.print();
-
-    StrVec str2;
-    str2 = str1;
-    str2.push_back("hello world");
-    str.print();
-    str1.print();
-    str2.print();
+    
+    ifstream infile("test.txt");
+    TextQuery tq;
+    tq.read(infile);
+    string word;
+    while(cin >> word){
+        QueryResult res = tq.query(word);
+        res.print();
+    }
+    
     return 0;
 }
